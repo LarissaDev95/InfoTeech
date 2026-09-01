@@ -4,6 +4,8 @@ use InfoTech\Controller\{
                         VendedorController, 
                         ClienteController, 
                         ProdutoController,
+                        LoginController,
+                        FuncionarioController
                     InicioController  };
 
 
@@ -30,5 +32,13 @@ switch($url)
 
     case "/infotech/admin":
         InicioController::notFound();
+    break;
+
+    case "/infotech/produto/listar":
+    ProdutoController::index();
+    break;
+
+    case "/infotech/login":
+        LoginController::index();
     break;
 }
