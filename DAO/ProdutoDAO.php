@@ -7,7 +7,7 @@ use InfoTech\Model\Produto;
 class ProdutoDAO extends DAO
 {
     public function __construct(){
-        
+
         parent::__construct();
     }
 
@@ -37,12 +37,12 @@ class ProdutoDAO extends DAO
 
     public function insert(Produto $model)
     {
-        $sql = "INSERT INTO produto (nome,descricao,preco,quantidade_estoque,status_produto) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO produto (nome,descricao,preco,quantidade,status_produto) VALUES (?,?,?,?,?)";
         $stmt = parent::$connection->prepare($sql);
         $stmt->bindValue(1, $model->nome);
         $stmt->bindValue(2, $model->descricao);
         $stmt->bindValue(3, $model->preco);
-        $stmt->bindValue(4, $model->quantidade_estoque);
+        $stmt->bindValue(4, $model->quantidade);
         $stmt->bindValue(5, $model->status_produto);
         $stmt->execute();
 
@@ -52,16 +52,16 @@ class ProdutoDAO extends DAO
 
     public function update(Produto $model)
     {
-        $sql = "UPDATE produto SET nome=?, descricao=?, preco=?, quantidade_estoque=?, status_produto=? 
+        $sql = "UPDATE produto SET nome=?, descricao=?, preco=?, quantidade=?, status_produto=? 
                 WHERE id_produto =?";
         $stmt = parent::$connection->prepare($sql);
         $stmt->bindValue(1, $model->nome);
         $stmt->bindValue(2, $model->descricao);
         $stmt->bindValue(3, $model->preco);
-        $stmt->bindValue(4, $model->quantidade_estoque);
+        $stmt->bindValue(4, $model->quantidade);
         $stmt->bindValue(5, $model->status_produto);
         $stmt->bindValue(6, $model->id_produto);
-        
+
         return $stmt->execute();
     }
 
@@ -70,7 +70,8 @@ class ProdutoDAO extends DAO
         $sql = "DELETE FROM produto WHERE id_produto =?";
         $stmt = parent::$connection->prepare($sql);
         $stmt->bindValue(1, $id);
-        
+
         return $stmt->execute();
     }
+
 }

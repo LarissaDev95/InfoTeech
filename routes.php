@@ -5,7 +5,6 @@ use InfoTech\Controller\{
                         ClienteController, 
                         ProdutoController,
                         LoginController,
-                        FuncionarioController
                     InicioController  };
 
 
@@ -30,15 +29,23 @@ switch($url)
         ClienteController::exclusao();
     break;
 
+    case "/infotech/produto/listar":
+        ProdutoController::index();
+    break;
+
+    case "/infotech/produto/cadastro":
+        ProdutoController::cadastro();
+    break;
+
+    case "/infotech/produto/exclusao":
+        ProdutoController::exclusao();
+    break;
+
     case "/infotech/admin":
         InicioController::notFound();
     break;
 
-    case "/infotech/produto/listar":
-    ProdutoController::index();
-    break;
-
     case "/infotech/login":
-        LoginController::index();
+        LoginController::login();
     break;
 }

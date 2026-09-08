@@ -34,6 +34,9 @@
   <button type="submit" name="salvar" id="salvar" class="btn btn-primary">Salvar</button>
 </form>
 
+<script src="../View/Includes/JS/cadastrar_cliente.js" defer></script>
+
 <?php
-   include VIEW . "/Includes/footer.php";
+  include VIEW . "/Includes/modais/modal_cliente.php";
+  include VIEW . "/Includes/footer.php";
 ?>

@@ -6,13 +6,12 @@ use InfoTech\DAO\ProdutoDAO; // vou chamar um método da class DAO, use ProdutoD
 
 final class Produto extends Model
 {
-    public ?int $id_produto;
-    public string $nome;
-    public string $descricao;
-    public float $preco;
-    public int $quantidade_estoque;
-    public string $status_produto;
-    public ?string $data_cadastro;
+    public ?int $id_produto = null;
+    public string $nome = '';
+    public string $descricao = '';
+    public float $preco = 0;
+    public int $quantidade = 0;
+    public string $status_produto = '';
 
     public function getAllRows()
     {

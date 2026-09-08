@@ -9,7 +9,6 @@ class ClienteController extends Controller
 
     public static function index() //TODOS OS CLIENTES
     {
-        parent::isLogged();
         $model = new Cliente();
         $model->getAllRows(); //pega os dados da model
         parent::render('/Cliente/listar_clientes.php', $model);

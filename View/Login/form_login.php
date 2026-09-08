@@ -13,13 +13,12 @@
     <input type="email" class="form-control" id="email" name="email" value="<?= $model->email ?? '' ?>" >
   </div>
 
- <form method="POST" action="/infotech/login">
   <div class="mb-3">
     <label for="senha" class="form-label">Senha</label>
     <input type="password" class="form-control" id="senha" name="senha" value="<?= $model->senha ?? '' ?>" >
   </div>
 
-  <button type="submit" name="Login" id="salvar" class="btn btn-primary">Login</button>
+  <button type="submit" name="login" id="login" class="btn btn-primary">Entrar</button>
 </form>
 
 <?php
