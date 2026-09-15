@@ -12,7 +12,6 @@ final class Cliente extends Model
     public string $telefone;
     public string $email;
     public ?string $data_cadastro;
-    public ?int $id_categoria;
 
     public function getAllRows()
     {   
