@@ -1,6 +1,5 @@
 <?php
-
-echo "<h1> PAGINA DE CADASTRAR PRODUTO </h1>";
-
-// HTML
+    include VIEW . "/Includes/header.php";
+    include VIEW . "/Includes/navbar.php";
 ?>
+
